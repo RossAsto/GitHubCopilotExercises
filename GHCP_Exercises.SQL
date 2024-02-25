@@ -271,11 +271,11 @@ EXEC InsertNewInventory 5, 100
 Exercise 4: Write a SQL query that would insert data into a SQL table from a CSV file. 
 *************************************************************************************/
 
-/*Insert a CSV file called CurrentInventory.csv in C:\myDocs\Avanade\GHCP-Playground  into CurrentInventory table. 
+/*Insert a CSV file called CurrentInventory.csv in C:\myDocs\Avanade\GHCP-Playground\GitHubCopilotExercises  into CurrentInventory table. 
 The delimiter for the CSV file is a pipe.
 It has column headers.*/
 BULK INSERT CurrentInventory
-FROM 'C:\myDocs\Avanade\GHCP-Playground\CurrentInventory.csv'
+FROM 'C:\myDocs\Avanade\GHCP-Playground\GitHubCopilotExercises\CurrentInventory.csv'
 WITH
 (
     FIELDTERMINATOR = '|',
@@ -287,9 +287,9 @@ WITH
 select * from CurrentInventory
 
 
-/*Insert a CSV file called CurrentInventory2.csv in C:\myDocs\Avanade\GHCP-Playground  into CurrentInventory table. */
+/*Insert a CSV file called CurrentInventory2.csv in C:\myDocs\Avanade\GHCP-Playground\GitHubCopilotExercises  into CurrentInventory table. */
 BULK INSERT CurrentInventory
-FROM 'C:\myDocs\Avanade\GHCP-Playground\CurrentInventoryv2.csv'
+FROM 'C:\myDocs\Avanade\GHCP-Playground\GitHubCopilotExercises\CurrentInventoryv2.csv'
 WITH
 (
     FIELDTERMINATOR = '|',
@@ -297,18 +297,18 @@ WITH
     FIRSTROW = 2
 )
 
-/*Insert a CSV file called CurrentInventory2.csv in C:\myDocs\Avanade\GHCP-Playground  into CurrentInventory table.
+/*Insert a CSV file called CurrentInventory2.csv in C:\myDocs\Avanade\GHCP-Playground\GitHubCopilotExercises  into CurrentInventory table.
 Pass the arguments to the BULK INSERT command using a format file.
 Also the CSV file is pipe-delimited and has column headers.*/
 BULK INSERT CurrentInventory
-FROM 'C:\myDocs\Avanade\GHCP-Playground\CurrentInventoryv2.csv'
+FROM 'C:\myDocs\Avanade\GHCP-Playground\GitHubCopilotExercises\CurrentInventoryv2.csv'
 WITH
 (
-    FORMATFILE = 'C:\myDocs\Avanade\GHCP-Playground\CurrentInventoryFormatFile.xml',
+    FORMATFILE = 'C:\myDocs\Avanade\GHCP-Playground\GitHubCopilotExercises\CurrentInventoryFormatFile.xml',
     FIRSTROW = 2
 )
 
 
 /*Generate CurrentInventoryFormatFile.xml from CurrentInventory table*/
-bcp SampleDB.dbo.CurrentInventory format nul -c -x -f C:\myDocs\Avanade\GHCP-Playground\CurrentInventoryFormatFile.xml -t "|" -T
+bcp SampleDB.dbo.CurrentInventory format nul -c -x -f C:\myDocs\Avanade\GHCP-Playground\GitHubCopilotExercises\CurrentInventoryFormatFile.xml -t "|" -T
 
